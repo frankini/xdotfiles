@@ -82,13 +82,12 @@ end
 -- Define a tag table which hold all screen tags.
 tags = {
   settings= {
-    { names  = { "Web" },
-      layout = { layouts[1] }
-    },
     { names  = { "Main", "Dev", "Chat", "Read" },
       layout = { layouts[2], layouts[1], layouts[1], layouts[1] }
+    },
+    { names  = { "Web" },
+      layout = { layouts[1] }
  }}}
-
     -- Each screen has its own tag table.
 for s = 1, screen.count() do
     tags[s] = awful.tag(tags.settings[s].names, s, tags.settings[s].layout)
@@ -398,7 +397,7 @@ awful.rules.rules = {
       properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     { rule = { class = "Chromium" },
-      properties = { tag = tags[1][1] } },
+      properties = { tag = tags[2][1] } },
 }
 -- }}}
 
