@@ -521,23 +521,24 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons,
 	                   size_hints_honor = false } },
-    { rule = { class = "Termite" },
-          properties = { opacity = 0.99 } },
 
     { rule = { class = "MPlayer" },
           properties = { floating = true } },
 
     { rule = { class = "Dwb" },
-          properties = { tag = tags[1][1] } },
-
-    { rule = { class = "chromium" },
           properties = { tag = tags[1][6] } },
+
+    { rule = { class = "Chromium" },
+          properties = { tag = tags[1][6] } },
+
+    { rule = { instance = "weechat" },
+          properties = { tag = tags[1][3] } },
 
     { rule = { instance = "plugin-container" },
           properties = { tag = tags[1][1] } },
 
 	  { rule = { class = "Gimp" },
-     	    properties = { tag = tags[1][4] } },
+     	    properties = { tag = tags[1][5] } },
 
     { rule = { class = "Gimp", role = "gimp-image-window" },
           properties = { maximized_horizontal = true,
