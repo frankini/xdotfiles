@@ -49,7 +49,7 @@ function run_once(cmd)
 end
 
 run_once("unclutter")
-run_once("compton")
+run_once("dex -a -e Awesome")
 -- }}}
 
 -- {{{ Variable definitions
