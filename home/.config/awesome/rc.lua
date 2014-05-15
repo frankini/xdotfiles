@@ -48,8 +48,15 @@ function run_once(cmd)
   awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
 end
 
-run_once("unclutter")
+-- Autostart applications with .desktop files
 run_once("dex -a -e Awesome")
+
+-- Start up the terminal based programs
+run_once("unclutter")
+run_once("termite -e ranger -t Ranger")
+run_once("termite -e weechat -t Weechat")
+-- run_once("termite -e mutt -t Mutt")
+-- run_once("termite -e newsbeuter -t Newsbueter"):
 -- }}}
 
 -- {{{ Variable definitions
