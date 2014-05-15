@@ -1,0 +1,58 @@
+#
+# mutt config
+#
+
+
+#######################################
+# Mail/SMTP/IMAP Settings
+#
+
+set my_server=mail.messagingengine.com
+set my_smtp_server=mail.messagingengine.com
+set my_user=steven@lightsblink.com
+set my_pass=`gnome-keyring-query get mail.lightsblink.com`
+
+set header_cache=~/.mutt/hcache/lightsblink-imap
+
+set imap_user=$my_user
+set imap_pass=$my_pass
+
+#
+# SMTP server to relay to
+set smtp_url="smtp://$myuser:$my_pass@$my_smtp_server:587"
+
+#
+# Slow down new mail checks over imap
+set mail_check=300
+set timeout=600
+
+
+#######################################
+# Folder Settings
+#
+
+set folder=imaps://$my_server/INBOX
+
+set spoolfile="="
+
+set record="=Sent Items"
+set postponed="=Drafts"
+
+#######################################
+# Mailboxes to monitor
+#
+
+mailboxes !
+
+mailboxes =another
+
+set abort_unmodified = ask-no
+set move = no
+set editor = "vim +/^$ ++1"
+
+set mailcap_path  = ~/.mutt/mailcap
+
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+source $HOME/.mutt/colors/mutt-colors-solarized-dark-16.muttrc
