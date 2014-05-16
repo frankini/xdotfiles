@@ -53,9 +53,10 @@ run_once("dex -a -e Awesome")
 
 -- Start up the terminal based programs
 run_once("unclutter")
-run_once("termite -e ranger -t Ranger")
-run_once("termite -e weechat -t Weechat")
--- run_once("termite -e mutt -t Mutt")
+run_once("termite --name ncmpcpp -e ncmpcpp -t ncmpcpp")
+run_once("termite --name ranger -e ranger -t ranger")
+run_once("termite --name mutt -e mutt -t mutt")
+run_once("termite --name weechat -e weechat -t weechat")
 -- run_once("termite -e newsbeuter -t Newsbueter"):
 -- }}}
 
@@ -536,10 +537,19 @@ awful.rules.rules = {
           properties = { tag = tags[1][6] } },
 
     { rule = { class = "Chromium" },
-          properties = { tag = tags[1][6] } },
+          properties = { tag = tags[2][6] } },
 
     { rule = { instance = "weechat" },
           properties = { tag = tags[1][3] } },
+
+    { rule = { instance = "mutt" },
+          properties = { tag = tags[1][1] } },
+
+    { rule = { instance = "ranger" },
+          properties = { tag = tags[1][1] } },
+
+    { rule = { instance = "ncmpcpp" },
+          properties = { tag = tags[1][1] } },
 
     { rule = { instance = "plugin-container" },
           properties = { tag = tags[1][1] } },
