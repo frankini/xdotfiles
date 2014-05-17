@@ -537,7 +537,7 @@ awful.rules.rules = {
           properties = { tag = tags[1][6] } },
 
     { rule = { class = "Chromium" },
-          properties = { tag = tags[2][6] } },
+          properties = { tag = tags[1][6] } },
 
     { rule = { instance = "weechat" },
           properties = { tag = tags[1][3] } },
