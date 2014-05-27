@@ -2,6 +2,7 @@
 # mutt config
 #
 
+set from="steven@lightsblink.com"
 
 #######################################
 # Mail/SMTP/IMAP Settings
@@ -19,8 +20,7 @@ set imap_pass=$my_pass
 
 #
 # SMTP server to relay to
-set smtp_url="smtp://$myuser:$my_pass@$my_smtp_server:587"
-
+set smtp_url="smtp://$my_user:$my_pass@$my_smtp_server:587/"
 #
 # Slow down new mail checks over imap
 set mail_check=300
@@ -56,3 +56,5 @@ auto_view text/html
 alternative_order text/plain text/enriched text/html
 
 source $HOME/.mutt/colors/mutt-colors-solarized-dark-16.muttrc
+
+bind index "^" imap-fetch-mail
