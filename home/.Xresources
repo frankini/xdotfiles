@@ -6,14 +6,14 @@ Xft.hinting:    true
 Xft.hintstyle:  hintslight
 
 ! Urxvt settings -------------------------------------------------------------
-URxvt*termName:                       rxvt-256color
+URxvt*termName:                       rxvt-unicode-256color
 URxvt*scrollstyle:                    rxvt
 URxvt*scrollBar:                      false
 URxvt*urgentOnBell:                   true
- URxvt*font:                           -xos4-terminus-medium-r-normal-*-14-140-72-72-c-80-iso8859-1   
- URxvt*boldFont:                       -xos4-terminus-medium-r-normal-*-14-140-72-72-c-80-iso8859-1
+URxvt*font:                           -xos4-terminus-medium-r-normal-*-14-140-72-72-c-80-iso8859-1   
+URxvt*boldFont:                       -xos4-terminus-medium-r-normal-*-14-140-72-72-c-80-iso8859-1
 URxvt*depth:                          32
-URxvt*background:                     [35]#073642
+URxvt*background:                     [90]#073642
 
 URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
 URxvt.url-select.launcher:  chromium
@@ -21,6 +21,8 @@ URxvt.url-select.underline: true
 URxvt.keysym.M-u:           perl:url-select:select_next
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
+URxvt.keysym.M-c:           perl:clipboard:copy
+URxvt.keysym.M-p:           perl:clipboard:paste
 
 
 #define S_base03        #002b36
@@ -42,8 +44,6 @@ URxvt.keysym.M-s:           perl:keyboard-select:search
 
 *background:            S_base03
 *foreground:            S_base00
-*fading:                40
-*fadeColor:             S_base03
 *cursorColor:           S_base1
 *pointerColorBackground:S_base01
 *pointerColorForeground:S_base1

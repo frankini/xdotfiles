@@ -6,4 +6,7 @@
 # bspwm
 sxhkd &
 urxvt &
+compton &
+unclutter &
+
 exec bspwm
