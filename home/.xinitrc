@@ -1,9 +1,11 @@
-# Awesome
-# exec awesome
-
+# Merge .Xresources
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
-# bspwm
+# Load fonts
+xset +fp /usr/share/fonts/local
+xset fp rehash
+
+# Launch bspwm
 sxhkd &
 urxvt &
 compton &
