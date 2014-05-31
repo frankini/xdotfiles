@@ -7,7 +7,6 @@ xset fp rehash
 
 # Launch bspwm
 sxhkd &
-urxvt &
 compton &
 unclutter &
 
