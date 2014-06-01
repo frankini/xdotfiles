@@ -28,9 +28,6 @@ super + {o,i}
 	bspc window {older,newer} -f; \
 	bspc control --record-history on
 
-super + y
-	bspc window -w last.manual
-
 super + m
 	bspc window -s biggest
 
@@ -58,11 +55,8 @@ super + alt + {h,j,k,l}
 super + alt + shift + {h,j,k,l}
 	bspc window -e {right -10,up +10,down -10,left +10}
 
-super + ctrl + {1-9}
-	bspc window -r 0.{1-9}
-
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,window -d} ^{1-9,10}
+super + {minus,equal}
+  bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
 
 ~button1
 	bspc pointer -g focus
@@ -85,6 +79,15 @@ super + Return
 
 super + space
 	dmenu_run
+
+super + p
+  passmenu
+
+super + e
+  termite -e mutt
+
+super + w
+  chromium
 
 # make sxhkd reload its configuration files:
 super + Escape

@@ -16,7 +16,7 @@ bspc config top_padding 14
 
 bspc config split_ratio        0.50
 bspc config border_width       1
-bspc config window_gap         4
+bspc config window_gap         16
 bspc config borderless_monocle  true
 bspc config gapless_monocle     true
 bspc config normal_frame_opacity 0.0
@@ -27,4 +27,4 @@ bspc rule -a mplayer2 floating=on
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-statusbar &
+$home/.config/bspwm/panel/statusbar &

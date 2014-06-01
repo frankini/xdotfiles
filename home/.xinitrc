@@ -2,6 +2,7 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 # Load fonts
+xset +fp ~/.fonts
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
