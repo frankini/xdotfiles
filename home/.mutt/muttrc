@@ -11,7 +11,7 @@ set from="steven@lightsblink.com"
 set my_server=mail.messagingengine.com
 set my_smtp_server=mail.messagingengine.com
 set my_user=steven@lightsblink.com
-set my_pass=`gnome-keyring-query get mail.lightsblink.com`
+set my_pass=`pass email/mail.lightsblink.com`
 
 set header_cache=~/.mutt/hcache/lightsblink-imap
 
