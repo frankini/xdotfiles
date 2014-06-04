@@ -61,17 +61,18 @@ ARGF.each do |line|
   monitor = 0
   monitors.each do |s|
     print "%{S#{monitor}}"
-    print "%{l} "
+    print "%{c} "
     s.each do |t|
-      print "%{F#{colors[:fg]}}"  if t[:state] == :occupied
-      print "%{F#{colors[:dim]}}" if t[:state] == :free
       if (t[:focus])
-        print "O"
+        print "%{F#{colors[:fg]}}"
       else
-        print "o"
+        print "%{F#{colors[:dim]}}" if t[:state]
       end
+      print " " if t[:state] == :occupied
+      print " " if t[:state] == :free
     end
-    print "%{c}#{title}" if monitor == am
+
+#    print "%{c}#{title}" if monitor == am
     print " %{r} %#{song}  #{memfree}  #{time} " if monitor == 0
     monitor += 1
   end

@@ -4,7 +4,7 @@ panel_fifo=/tmp/panel.fifo
 panel_height=16
 font_family='-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1,-*-terminus-medium-r-normal-*-12-*-*-*-c-*-*-1'
 color_fg='#ff839694'
-color_bg='#f2002b36'
+color_bg='#ff0003CC'
 paneldir=$HOME/.config/bspwm/panel
 
 if [ $(pgrep -cx panel) -gt 1 ] ; then
