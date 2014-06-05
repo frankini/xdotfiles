@@ -2,9 +2,9 @@
 
 $stdout.sync = true
 
-colors = { :fg  => "#FFFFFF",
-           :dim => "#4E595F",
-           :hilight => "#AD8995" }
+colors = { :red => "#843026",
+           :yellow => "#FFCB00",
+           :blue => "#586875" }
 
 
 monitors = []
@@ -62,22 +62,21 @@ ARGF.each do |line|
   monitor = 0
   monitors.each do |s|
     print "%{S#{monitor}}"
-    print "%{c}  "
+    print "%{l} %{F#{colors[:yellow]}}%{F-} "
+    print "%{c} " 
     s.each do |t|
-      if (t[:focus])
-        print "%{F#{colors[:hilight]}}"
-      else
-        print "%{F#{colors[:dim]}}" if t[:state]
-      end
+      print "%{F#{colors[:red]}}" if t[:focus]
       print " " if t[:state] == :occupied
       print " " if t[:state] == :free
       print "%{F-} "
     end
 
-#    print "%{c}#{title}" if monitor == am
-    print " %{r} %#{song}  #{memfree}  #{time} " if monitor == 0
+    print "%{r}"
+    if (monitor == 0)
+      print "%{F#{colors[:red]}}%{F-} %#{song}" unless song.empty?
+      print " %{F#{colors[:red]}}%{F-} #{memfree} %{F#{colors[:red]}}%{F-} #{time} "
+    end
     monitor += 1
   end
   print "\n"
 end
-
