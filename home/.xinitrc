@@ -10,5 +10,6 @@ xset fp rehash
 sxhkd &
 compton &
 unclutter &
+dropbox &
 
 exec bspwm
