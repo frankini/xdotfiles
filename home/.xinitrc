@@ -10,6 +10,10 @@ xset fp rehash
 sxhkd &
 compton &
 unclutter &
-dropbox &
+dropboxd &
+
+# Set wallpaper
+sleep 5
+/home/steven/bin/setwall &
 
 exec bspwm
