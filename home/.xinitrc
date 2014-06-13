@@ -7,13 +7,13 @@ xset +fp /usr/share/fonts/local
 xset fp rehash
 
 # Launch bspwm
-sxhkd &
+#sxhkd &
 compton &
-unclutter &
-dropboxd &
+#unclutter &
+#dropboxd &
 
 # Set wallpaper
-sleep 5
-/home/steven/bin/setwall &
+#sleep 5
+#/home/steven/bin/setwall &
 
-exec bspwm
+exec i3
