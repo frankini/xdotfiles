@@ -1,10 +1,10 @@
 short_units yes
-background yes
+background no
 out_to_console yes
 out_to_x no
 # Update interval in seconds
 update_interval 3
-update_interval_on_battery 3
+update_interval_on_battery 5
 
 TEXT
-Sm${if_mpd_playing}${mpd_artist} - ${mpd_title}${endif}|r${memfree}|t${time %H:%M}
+S|%{A:wifi:}${execi 1 ./panel_wifi}%{A}  %{A:batt:}${execi 1 ./panel_battery}%{A}  %{A:date:} ${time %I:%M %P}%{A}

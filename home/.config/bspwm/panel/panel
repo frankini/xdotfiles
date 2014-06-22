@@ -5,7 +5,8 @@ panel_height=16
 font_family='-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1,-*-terminus-medium-r-normal-*-12-*-*-*-c-*-*-1'
 color_fg='#ffA9A9AB'
 color_bg='#ff1F1F21'
-paneldir=$HOME/.config/bspwm/panel
+
+cd $(dirname $0)
 
 if [ $(pgrep -cx panel) -gt 1 ] ; then
 	printf "%s\n" "The panel is already running." >&2
@@ -18,9 +19,6 @@ trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 mkfifo "$panel_fifo"
 
 bspc control --subscribe > "$panel_fifo" &
-xtitle -sf 'T%s' > "$panel_fifo" &
-#clock -sf 'S%a %H:%M' > "$panel_fifo" &
-conky -c $paneldir/panel_conky > "$panel_fifo" &
+conky -c ./panel_conky > "$panel_fifo" &
 
-cat "$panel_fifo" | $paneldir/parse.rb | bar -g x$panel_height -f "$font_family" -F "$color_fg" -B "$color_bg" &
-wait
+cat "$panel_fifo" | ./parse.rb | bar -g x$panel_height -f "$font_family" -F "$color_fg" -B "$color_bg"
