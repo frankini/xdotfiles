@@ -8,4 +8,4 @@ else
 	output=""
 fi
 
-echo $output;
+echo "$output  $temp°"

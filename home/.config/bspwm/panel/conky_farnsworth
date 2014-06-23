@@ -1,0 +1,9 @@
+short_units yes
+background no
+out_to_console yes
+out_to_x no
+# Update interval in seconds
+update_interval 3
+
+TEXT
+S|${execi 1 ./panel_temperature}  %{A:date:}${time  %A %b %e   %H:%M}%{A}

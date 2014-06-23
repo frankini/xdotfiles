@@ -7,4 +7,4 @@ update_interval 3
 update_interval_on_battery 5
 
 TEXT
-S|%{A:wifi:}${execi 1 ./panel_wifi}%{A}  %{A:batt:}${execi 1 ./panel_battery}%{A}  %{A:date:} ${time %I:%M %P}%{A}
+S|%{A:wifi:}${execi 1 ./panel_wifi}%{A}  %{A:batt:}${execi 1 ./panel_battery}%{A}  %{A:date:}${time  %A %b %e   %H:%M}%{A}
