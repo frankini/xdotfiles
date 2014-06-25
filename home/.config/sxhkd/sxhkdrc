@@ -14,7 +14,7 @@ super + t
 super + b
 	bspc desktop -B
 
-super + {s,f}
+super + {F5,F4}
 	bspc window -t {floating,fullscreen}
 
 super + {grave,Tab}
@@ -40,7 +40,7 @@ super + {_,shift + }c
 super + {comma,period}
 	bspc desktop -C {backward,forward}
 
-super + bracket{left,right}
+super + {F1,F2}
 	bspc desktop -f {prev,next}
 
 super + ctrl + {h,j,k,l}
@@ -86,8 +86,20 @@ super + p
 super + e
   termite -e mutt
 
-super + w
+super + b
   chromium
+
+@super + {_,shift +}{Up,Down,Left,Right}
+  xdotool key --clearmodifiers {_,shift+}{Page_Up,Page_Down,Home,End}
+
+super + {F6,F7}
+  xbacklight -{dec,inc} 10
+
+super + F8
+  amixer set Master toggle
+
+super + {F9,F10}
+  amixer set Master 10{-,+} unmute
 
 # make sxhkd reload its configuration files:
 super + Escape
